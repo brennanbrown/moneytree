@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: Categories
+permalink: "/categories/"
+---
+
+<section class="grid gap-6">
+  <div class="rounded-lg border p-4 bg-white">
+    <h1 class="font-semibold mb-4">Add Category</h1>
+    <form id="cat-form" class="grid gap-3 sm:grid-cols-3">
+      <div>
+        <label class="block text-sm mb-1">Name</label>
+        <input name="name" required class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Color</label>
+        <input name="color" type="color" value="#10B981" class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Icon</label>
+        <input name="icon" maxlength="2" placeholder="e.g. 🍔" class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div class="sm:col-span-3 flex justify-end gap-2 mt-2">
+        <button type="reset" class="btn border">Clear</button>
+        <button type="submit" class="btn bg-primary text-white">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="rounded-lg border p-4 bg-white">
+    <h2 class="font-semibold mb-4">Categories</h2>
+    <div id="cat-empty" class="text-sm text-gray-500 hidden">No categories yet</div>
+    <ul id="cat-list" class="divide-y"></ul>
+  </div>
+</section>

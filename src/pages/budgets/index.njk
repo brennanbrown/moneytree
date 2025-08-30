@@ -1,0 +1,36 @@
+---
+layout: layouts/base.njk
+title: Budgets
+permalink: "/budgets/"
+---
+
+<section class="grid gap-6">
+  <div class="rounded-lg border p-6 bg-white">
+    <h1 class="font-semibold text-xl mb-4">Budgets</h1>
+    <form id="budget-form" class="grid sm:grid-cols-4 gap-3 items-end">
+      <div>
+        <label class="block text-sm font-medium mb-1">Category</label>
+        <select name="category" class="w-full border rounded-lg px-3 py-2"></select>
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Amount</label>
+        <input name="amount" type="number" min="0" step="0.01" class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm font-medium mb-1">Period</label>
+        <select name="period" class="w-full border rounded-lg px-3 py-2">
+          <option value="monthly">Monthly</option>
+        </select>
+      </div>
+      <div>
+        <button type="submit" class="btn bg-primary text-white">Add Budget</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="rounded-lg border p-6 bg-white">
+    <h2 class="font-semibold mb-3">Existing Budgets</h2>
+    <div id="budget-empty" class="text-sm text-gray-500">No budgets yet</div>
+    <ul id="budget-list" class="divide-y"></ul>
+  </div>
+</section>

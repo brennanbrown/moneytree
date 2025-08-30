@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#10B981" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="/assets/images/icon-192.png" />
+  <title>{{ title or 'Moneytree' }}</title>
+  <link rel="stylesheet" href="/assets/main.css" />
+</head>
+<body class="min-h-full bg-gray-50 text-gray-900">
+  <header class="sticky top-0 z-10 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="/" class="font-bold text-primary">Moneytree</a>
+      <nav class="hidden sm:flex gap-4 text-sm">
+        <a href="/" class="hover:text-primary">Dashboard</a>
+        <a href="/accounts/" class="hover:text-primary">Accounts</a>
+        <a href="/categories/" class="hover:text-primary">Categories</a>
+        <a href="/transactions/" class="hover:text-primary">Transactions</a>
+        <a href="/budgets/" class="hover:text-primary">Budgets</a>
+        <a href="/analytics/" class="hover:text-primary">Analytics</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-6">
+    {{ content | safe }}
+  </main>
+
+  <script type="module" src="/assets/app.js"></script>
+
+  <footer class="max-w-5xl mx-auto px-4 py-8 text-xs text-gray-500">
+    <p>Privacy-first. Offline by default. Open source.</p>
+  </footer>
+</body>
+</html>

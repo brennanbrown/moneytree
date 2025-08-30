@@ -1,0 +1,44 @@
+---
+layout: layouts/base.njk
+title: Accounts
+permalink: "/accounts/"
+---
+
+<section class="grid gap-6">
+  <div class="rounded-lg border p-4 bg-white">
+    <h1 class="font-semibold mb-4">Add Account</h1>
+    <form id="acct-form" class="grid gap-3 sm:grid-cols-2">
+      <div>
+        <label class="block text-sm mb-1">Name</label>
+        <input name="name" required class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Type</label>
+        <select name="type" class="w-full border rounded-lg px-3 py-2">
+          <option value="checking">Checking</option>
+          <option value="savings">Savings</option>
+          <option value="credit">Credit Card</option>
+          <option value="cash">Cash</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Starting Balance</label>
+        <input name="balance" type="number" step="0.01" value="0" class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div>
+        <label class="block text-sm mb-1">Color</label>
+        <input name="color" type="color" value="#3B82F6" class="w-full border rounded-lg px-3 py-2" />
+      </div>
+      <div class="sm:col-span-2 flex justify-end gap-2 mt-2">
+        <button type="reset" class="btn border">Clear</button>
+        <button type="submit" class="btn bg-primary text-white">Add</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="rounded-lg border p-4 bg-white">
+    <h2 class="font-semibold mb-4">Accounts</h2>
+    <div id="acct-empty" class="text-sm text-gray-500 hidden">No accounts yet</div>
+    <ul id="acct-list" class="divide-y"></ul>
+  </div>
+</section>

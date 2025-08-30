@@ -1,0 +1,41 @@
+---
+layout: layouts/base.njk
+title: Moneytree — Dashboard
+permalink: "/"
+---
+
+<section class="grid gap-8">
+  <!-- Hero header -->
+  <div class="relative overflow-hidden rounded-2xl border bg-gradient-to-r from-indigo-600 via-violet-600 to-fuchsia-600 text-white shadow">
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 20% 20%, white 2px, transparent 2px); background-size: 20px 20px;"></div>
+    <div class="relative p-6 sm:p-10">
+      <h1 class="text-2xl sm:text-3xl font-semibold tracking-tight">Moneytree Dashboard</h1>
+      <p class="mt-2 max-w-2xl text-white/80">Track spending, transfers, and budgets — all offline and private.</p>
+      <div class="mt-4">
+        <a href="/transactions/" class="inline-flex items-center gap-2 rounded-xl bg-white/15 backdrop-blur px-4 py-2 text-sm font-medium hover:bg-white/25 transition shadow">
+          <span>+ Quick Add Transaction</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="rounded-2xl border p-5 bg-white shadow-sm">
+      <h2 class="font-semibold mb-3 flex items-center gap-2"><span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-indigo-100 text-indigo-700">💼</span> Account Overview</h2>
+      <div id="account-overview" class="text-sm text-gray-700">Loading...</div>
+    </div>
+    <div class="rounded-2xl border p-5 bg-white shadow-sm">
+      <h2 class="font-semibold mb-3 flex items-center gap-2"><span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-rose-100 text-rose-700">🧾</span> Recent Transactions</h2>
+      <ul id="recent-transactions" class="divide-y divide-gray-100 text-sm"></ul>
+    </div>
+    <div class="rounded-2xl border p-5 bg-white shadow-sm">
+      <h2 class="font-semibold mb-3 flex items-center gap-2"><span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-emerald-100 text-emerald-700">🎯</span> Budget Status</h2>
+      <div id="budget-status" class="text-sm text-gray-700">—</div>
+    </div>
+    <div class="rounded-2xl border p-5 bg-white shadow-sm">
+      <h2 class="font-semibold mb-3 flex items-center gap-2"><span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-amber-100 text-amber-700">📊</span> Quick Stats</h2>
+      <div id="quick-stats" class="text-sm text-gray-700">—</div>
+    </div>
+  </div>
+</section>

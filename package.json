@@ -1,0 +1,26 @@
+{
+  "name": "moneytree",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"eleventy --serve --input=src --config=.eleventy.cjs\" \"npm:watch:css\" \"npm:watch:js\"",
+    "build": "rimraf _site && npm run build:css && npm run build:js && eleventy --input=src --config=.eleventy.cjs",
+    "watch:css": "tailwindcss -i src/assets/css/main.css -o src/assets/dist/main.css --watch",
+    "build:css": "tailwindcss -i src/assets/css/main.css -o src/assets/dist/main.css --minify",
+    "watch:js": "esbuild src/assets/js/app.js --bundle --outfile=src/assets/dist/app.js --sourcemap --watch",
+    "build:js": "esbuild src/assets/js/app.js --bundle --outfile=src/assets/dist/app.js --minify",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "concurrently": "^8.2.2",
+    "esbuild": "^0.21.5",
+    "fake-indexeddb": "^6.0.0",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.4.9",
+    "happy-dom": "^13.10.1",
+    "vitest": "^2.0.5"
+  }
+}
