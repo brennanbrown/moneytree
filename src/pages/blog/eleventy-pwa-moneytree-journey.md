@@ -1,8 +1,8 @@
 ---
 layout: layouts/base.njk
-title: Building Moneytree: An 11ty + IndexedDB PWA Journey
+title: "Building Moneytree: An 11ty + IndexedDB PWA Journey"
 date: 2025-08-29
-description: How I built a privacy-first personal finance PWA with Eleventy, Tailwind, IndexedDB, and a Service Worker—what worked, what broke, and how to test PWAs effectively.
+description: "How I built a privacy-first personal finance PWA with Eleventy, Tailwind, IndexedDB, and a Service Worker—what worked, what broke, and how to test PWAs effectively."
 ---
 
 # Building Moneytree: An 11ty + IndexedDB PWA Journey
