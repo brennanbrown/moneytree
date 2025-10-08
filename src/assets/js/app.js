@@ -14,4 +14,4 @@ if ('serviceWorker' in navigator) {
   });
 }
 
-// (no placeholder overrides)//
+// (no placeholder overrides)
