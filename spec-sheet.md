@@ -1,4 +1,4 @@
-# Personal Finance Tracker - Project Specification
+# Moneytree: An Open Source Personal Finance Tracker - Project Specification
 
 ## Project Overview
 

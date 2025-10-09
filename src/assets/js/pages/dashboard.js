@@ -1,6 +1,44 @@
 import { db } from '../core/db.js';
 import { importBulkCSV } from '../core/bulkImport.js';
 
+function initClearData() {
+  const btn = document.getElementById('clear-all-data');
+  if (!btn) return;
+  
+  btn.addEventListener('click', async () => {
+    if (!confirm('⚠️ Are you sure you want to delete ALL data? This cannot be undone!')) {
+      return;
+    }
+    
+    btn.disabled = true;
+    btn.textContent = 'Clearing...';
+    
+    try {
+      // Close any open connections
+      const dbs = await indexedDB.databases();
+      const dbName = 'moneytree';
+      
+      // Delete the database
+      await new Promise((resolve, reject) => {
+        const request = indexedDB.deleteDatabase(dbName);
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+        request.onblocked = () => {
+          alert('Please close all other tabs with this site open, then try again.');
+          reject(new Error('Database deletion blocked'));
+        };
+      });
+      
+      // Reload the page to reinitialize
+      window.location.reload();
+    } catch (err) {
+      alert(`Error clearing data: ${err.message}`);
+      btn.disabled = false;
+      btn.textContent = 'Clear All Data';
+    }
+  });
+}
+
 function initBulkImport() {
   const btn = document.getElementById('bulk-csv-import');
   const input = document.getElementById('bulk-csv-file');
@@ -147,6 +185,7 @@ export async function initDashboardPage() {
     document.getElementById('budget-status') ||
     document.getElementById('quick-stats')
   ) {
+    initClearData();
     initBulkImport();
     await renderAccountOverview();
     await renderRecentTransactions();
