@@ -108,8 +108,8 @@ export async function importBulkCSV(text) {
         await db.addBudget({
           id: uid(),
           category: row.category || row.name || '',
-          month: row.month || new Date().toISOString().slice(0, 7),
-          limit: Number(row.limit || row.amount || 0)
+          period: row.period || row.month || 'monthly',
+          amount: Number(row.limit || row.amount || 0)
         });
         stats.budgets++;
       }
