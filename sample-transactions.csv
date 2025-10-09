@@ -1,0 +1,35 @@
+date,type,amount,category,account,description
+2025-01-15,income,3500.00,Income,💳 Chase Checking,Monthly salary deposit 💰
+2025-01-16,expense,45.99,Food,💳 Chase Checking,Lunch at Chipotle 🌯
+2025-01-16,expense,12.50,Transportation,💳 Chase Checking,Uber ride to downtown 🚕
+2025-01-17,expense,125.80,Groceries,💎 Capital One Credit,Weekly grocery shopping at Whole Foods 🥑
+2025-01-18,expense,89.99,Entertainment,💎 Capital One Credit,Movie tickets and popcorn 🍿
+2025-01-18,expense,6.75,Food,💳 Chase Checking,Morning coffee at Starbucks ☕
+2025-01-19,expense,150.00,Bills & Utilities,🏦 Bank of America Savings,Internet and phone bill 📱
+2025-01-20,expense,55.00,Food,💎 Capital One Credit,Pizza delivery night 🍕
+2025-01-21,expense,18.99,Transportation,💳 Chase Checking,Gas station fill-up ⛽
+2025-01-22,income,250.00,Income,💳 Chase Checking,Freelance project payment 💻
+2025-01-22,expense,199.99,Entertainment,💎 Capital One Credit,New video game purchase 🎮
+2025-01-23,expense,78.50,Groceries,💳 Chase Checking,Farmers market produce 🥬
+2025-01-24,expense,32.00,Food,💎 Capital One Credit,Sushi dinner 🍱
+2025-01-25,expense,120.00,Bills & Utilities,🏦 Bank of America Savings,Electric bill payment ⚡
+2025-01-26,expense,15.99,Entertainment,💳 Chase Checking,Netflix subscription 📺
+2025-01-27,expense,42.30,Food,💳 Chase Checking,Brunch with friends 🥞
+2025-01-28,expense,95.00,Groceries,💎 Capital One Credit,Costco bulk shopping 🛒
+2025-01-29,expense,8.50,Transportation,💳 Chase Checking,Bus pass top-up 🚌
+2025-01-30,expense,67.25,Food,💎 Capital One Credit,Thai takeout 🥡
+2025-02-01,income,3500.00,Income,💳 Chase Checking,Monthly salary deposit 💰
+2025-02-02,expense,180.00,Bills & Utilities,🏦 Bank of America Savings,Water and trash services 💧
+2025-02-03,expense,45.00,Food,💳 Chase Checking,Breakfast cafe 🥐
+2025-02-04,expense,29.99,Entertainment,💎 Capital One Credit,Concert streaming ticket 🎵
+2025-02-05,expense,110.50,Groceries,💳 Chase Checking,Weekly groceries at Trader Joe's 🛍️
+2025-02-06,expense,22.00,Transportation,💳 Chase Checking,Lyft to airport 🛫
+2025-02-07,income,500.00,Income,🏦 Bank of America Savings,Tax refund deposit 💵
+2025-02-08,expense,156.75,Food,💎 Capital One Credit,Restaurant dinner date 🍷
+2025-02-09,expense,38.99,Entertainment,💳 Chase Checking,Bookstore haul 📚
+2025-02-10,expense,72.00,Groceries,💎 Capital One Credit,Asian supermarket shopping 🍜
+2025-02-11,expense,14.25,Food,💳 Chase Checking,Smoothie and protein bar 🥤
+2025-02-12,expense,200.00,Bills & Utilities,🏦 Bank of America Savings,Car insurance payment 🚗
+2025-02-13,expense,51.80,Food,💎 Capital One Credit,Mexican restaurant 🌮
+2025-02-14,expense,89.99,Entertainment,💳 Chase Checking,Valentine's Day flowers 💐
+2025-02-15,income,150.00,Income,💳 Chase Checking,Cashback rewards 🎁

@@ -1,4 +1,64 @@
 import { db } from '../core/db.js';
+import { importBulkCSV } from '../core/bulkImport.js';
+
+function initBulkImport() {
+  const btn = document.getElementById('bulk-csv-import');
+  const input = document.getElementById('bulk-csv-file');
+  const status = document.getElementById('bulk-import-status');
+  if (!btn || !input || !status) return;
+  
+  btn.addEventListener('click', async () => {
+    const file = input.files?.[0];
+    if (!file) {
+      status.textContent = 'Please select a CSV file';
+      status.className = 'mt-3 text-sm text-red-600';
+      status.classList.remove('hidden');
+      return;
+    }
+    
+    btn.disabled = true;
+    btn.textContent = 'Importing...';
+    status.textContent = 'Processing...';
+    status.className = 'mt-3 text-sm text-blue-600';
+    status.classList.remove('hidden');
+    
+    try {
+      const text = await file.text();
+      const result = await importBulkCSV(text);
+      
+      if (result.success) {
+        status.textContent = `✅ ${result.message}`;
+        status.className = 'mt-3 text-sm text-green-600';
+        
+        if (result.stats.errors.length > 0) {
+          const errDiv = document.createElement('div');
+          errDiv.className = 'mt-2 text-xs text-orange-600 bg-orange-50 p-2 rounded border border-orange-200';
+          errDiv.innerHTML = '<strong>Warnings:</strong><br>' + result.stats.errors.slice(0, 5).join('<br>');
+          if (result.stats.errors.length > 5) {
+            errDiv.innerHTML += `<br>...and ${result.stats.errors.length - 5} more`;
+          }
+          status.appendChild(errDiv);
+        }
+        
+        // Refresh dashboard
+        await renderAccountOverview();
+        await renderRecentTransactions();
+        await renderBudgetSummary();
+        await renderQuickStats();
+      } else {
+        status.textContent = `❌ ${result.message}`;
+        status.className = 'mt-3 text-sm text-red-600';
+      }
+    } catch (err) {
+      status.textContent = `❌ Error: ${err.message}`;
+      status.className = 'mt-3 text-sm text-red-600';
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Import All';
+      input.value = '';
+    }
+  });
+}
 
 async function renderAccountOverview() {
   const el = document.getElementById('account-overview');
@@ -87,6 +147,7 @@ export async function initDashboardPage() {
     document.getElementById('budget-status') ||
     document.getElementById('quick-stats')
   ) {
+    initBulkImport();
     await renderAccountOverview();
     await renderRecentTransactions();
     await renderBudgetSummary();
